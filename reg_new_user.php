@@ -150,19 +150,24 @@ color:black;
 <div class="row">
   <div class="col-sm-1"></div>
   <div class="col-sm-3"style="text-align: center; ">
-    <h3>Login For User</h3>
+    <h3>Sign Up</h3>
         <br>
-    <form method="post" action="check.php">
+    <form method="post" action="">
 <div class="form-group" >
-    <input class="form-control" type="text" name="email" placeholder="abc@xyz.com" required>
+    <input class="form-control" type="text" name="name" placeholder="Username" required>
+    <br>
+    <input class="form-control" type="text" name="email" placeholder="email-id" required>
+    
     <br>
     <input class="form-control" type="password" name="pass" placeholder="password" required>
+    <br>
+    <input class="form-control" type="password" name="confirmpass" placeholder="confirm password" required>
     <br>
     <button class="form-control btn btn-primary" type="submit">Login</button>
 
   </div>
   </form>
-      <h6 style="text-align:right ;font-size:20px"><a href="reg_new_user.php">New User?</a></h6>
+      
   </div>
   
   <div class="col-sm-4"style="text-align: center;">
@@ -179,7 +184,6 @@ color:black;
     <input class="form-control" type="password" name="spass" placeholder="password" required>
     <br>
     <button class="form-control btn btn-success" type="submit">Login</button>
-     <h6 style="text-align:right ;font-size:20px"><a href="reg_new_school.php">New User?</a></h6>
 
   </div>
   </form>

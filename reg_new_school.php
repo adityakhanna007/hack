@@ -170,16 +170,40 @@ color:black;
   </div>
   
   <div class="col-sm-3" style="text-align: center;">
-    <h3>Login for Schools</h3>
+    <h3>Sign Up</h3>
     <br>
     <form method="post" action="check2.php">
 <div class="form-group" >
-    <input class="form-control" type="text" name="semail" placeholder="school-id" required>
+    <input class="form-control" type="text" name="sname" placeholder="school-name" required>
     <br>
-    <input class="form-control" type="password" name="spass" placeholder="password" required>
+    <input class="form-control" type="text" name="sid" placeholder="school-id" required>
+    <br>
+    <div style="text-align:left;font-size:20px;">State</div>
+    
+    <select class="form-control">
+        <option value="Punjab">Punjab</option>
+        <option value="UP">UP</option>
+    </select >
+    <br>
+    <div style="text-align:left;font-size:20px">District</div>
+    
+    <select class="form-control">
+        <option value="jalandhar">Jalandhar</option>
+        <option value="kapurthala">Kapurthala</option>
+    </select>
+    
+    
+    <br>
+     <input class="form-control" type="text" name="bankaccountno" placeholder="Bank Account Number" required>
+    <br>
+    <input class="form-control" type="text" name="Phone number" placeholder="Phone Number" required>
+    <br>
+    <input class="form-control" type="password" name="pass" placeholder="Password" required>
+    <br>
+    <input class="form-control" type="password" name="cpass" placeholder="Confirm Password" required>
     <br>
     <button class="form-control btn btn-success" type="submit">Login</button>
-     <h6 style="text-align:right ;font-size:20px"><a href="reg_new_school.php">New User?</a></h6>
+     
 
   </div>
   </form>
