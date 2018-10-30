@@ -180,16 +180,41 @@ color:black;
     <br>
     <div style="text-align:left;font-size:20px;">State</div>
     
-    <select class="form-control">
-        <option value="Punjab">Punjab</option>
-        <option value="UP">UP</option>
+    <select class="form-control" id="list">
+        <?php
+        include 'connection.php';
+        $sql="select distinct State from state_dist";
+        $res=mysqli_query($con,$sql);
+        while($row=mysqli_fetch_assoc($res))
+        {
+            ?>
+        <option value="<?php echo $row['State']; ?>"><?php echo $row['State']; ?></option>
+        <?php
+        }
+            
+        
+        ?>
     </select >
+    <script>
+    var state=document.getElementById("list").value;
+    
+    </script>
     <br>
     <div style="text-align:left;font-size:20px">District</div>
     
     <select class="form-control">
-        <option value="jalandhar">Jalandhar</option>
-        <option value="kapurthala">Kapurthala</option>
+         <?php
+        $sql="select District from state_dist where";
+        $res=mysqli_query($con,$sql);
+        while($row=mysqli_fetch_assoc($res))
+        {
+            ?>
+        <option><?php echo $row['State']; ?></option>
+        <?php
+        }
+            
+        
+        ?>
     </select>
     
     

@@ -152,7 +152,7 @@ color:black;
   <div class="col-sm-3"style="text-align: center; ">
     <h3>Sign Up</h3>
         <br>
-    <form method="post" action="">
+    <form method="post" action="signupuser.php">
 <div class="form-group" >
     <input class="form-control" type="text" name="name" placeholder="Username" required>
     <br>
