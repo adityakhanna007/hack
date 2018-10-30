@@ -1,34 +1,23 @@
+<script>
 <?php
 
-    $error = ""; $successMessage = "";
-
-    if ($_POST) {
-        
-        if (!$_POST["email"]) {
-            
-            $error .= "An email address is required.<br>";
-            
-        }
-        
-       
-        
-        
-        if ($_POST['email'] && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL) === false) {
-            
-            $error .= "The email address is invalid.<br>";
-            
-        }
-        
-        if ($error != "") {
-            
-            $error = '<div class="alert alert-danger" role="alert"><p>There were error(s) in your form:</p>' . $error . '</div>';
-            
-        }
-        }
-   
-    }
-
+ if(isset($_GET['invalid']))
+{
+    ?>
+    alert("There are error(s) in your form:email is invalid");
+    <?php
+     
+}
+    else if(isset($_GET['sinvalid']))
+{
+    ?>
+    alert("There are error(s) in your form:school id is invalid");
+    <?php
+     
+    
+}
 ?>
+</script>
 <html>
 <head>
   
@@ -165,9 +154,9 @@ color:black;
         <br>
     <form method="post" action="check.php">
 <div class="form-group" >
-    <input class="form-control" type="text" name="email" placeholder="abc@xyz.com">
+    <input class="form-control" type="text" name="email" placeholder="abc@xyz.com" required>
     <br>
-    <input class="form-control" type="password" name="pass" placeholder="password">
+    <input class="form-control" type="password" name="pass" placeholder="password" required>
     <br>
     <button class="form-control btn btn-primary" type="submit">Login</button>
 
@@ -182,11 +171,11 @@ color:black;
   <div class="col-sm-3" style="text-align: center;">
     <h3>Login for Schools</h3>
     <br>
-    <form method="post" action="check.php">
+    <form method="post" action="check2.php">
 <div class="form-group" >
-    <input class="form-control" type="text" name="semail" placeholder="school-id">
+    <input class="form-control" type="text" name="semail" placeholder="school-id" required>
     <br>
-    <input class="form-control" type="password" name="spass" placeholder="password">
+    <input class="form-control" type="password" name="spass" placeholder="password" required>
     <br>
     <button class="form-control btn btn-success" type="submit">Login</button>
 
