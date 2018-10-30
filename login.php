@@ -45,7 +45,7 @@
 <style>
 body
 {
-  
+ 
 }
 .heading
 {
@@ -196,4 +196,5 @@ color:black;
   <div class ="col-sm- 1"></div>
 </div>
 </div>
+ <div id="error"> <? echo $error.$successMessage; ?></div>
 </body>
