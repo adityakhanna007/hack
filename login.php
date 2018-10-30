@@ -42,6 +42,10 @@ body
   height: 100px;
   
 }
+.heading:hover
+{
+  background-image: url("images/b8.jpg");
+}
 .back
 {
   margin-top:10px;
@@ -85,14 +89,14 @@ color:black;
     About Us
   </div>
 <div class="col-sm-1 menu-item">
-    Donate
+    <a href="donate.php">Donate</a>
   </div>
   <div class="col-sm-1 menu-item">
-    Schools
+    <a href="schools.php">Schools</a>
   </div>
   <div class="col-sm-6">
   </div>
-  <div class="col-sm-2 menu-item">Username</div>
+  <div class="col-sm-2 menu-item"> username</div>
 </div>
   
 
@@ -112,24 +116,24 @@ color:black;
       <div class="item active">
         <img src="images/b1.jpg" alt="Los Angeles" style="width:100%; height:580px;">
         <div class="carousel-caption">
-          <h3>Los Angeles</h3>
-          <p>LA is always so much fun!</p>
+          <h3 style ="color:black">Education is a utility which makes human a personality.</h3>
+          
         </div>
       </div>
 
       <div class="item">
         <img src="images/b2.jpg" alt="Chicago" style="width:100%;height:580px">
         <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago!</p>
+          <h3 style ="color:black">Education is smart enough to change the human mind positively!</h3>
+    
         </div>
       </div>
     
       <div class="item">
         <img src="images/b3.jpg" alt="New York" style="width:100%;height:580px;">
         <div class="carousel-caption">
-          <h3>New York</h3>
-          <p>We love the Big Apple!</p>
+          <h3 style ="color:black">Be a reader, be a writer, be a problem solver.</h3>
+         
         </div>
       </div>
   
