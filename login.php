@@ -9,7 +9,7 @@ if(isset($_GET['added']))
 ?>
 </script>
 <html>
-<head>
+    <head>
   
 <title>
   FIRST PAGE
@@ -73,82 +73,11 @@ color:black;
 }
 </style>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12 heading">
-          <h1 class="headtext">ABC COMPANY</h1>
-      </div>
-      <div class="col-sm-12">
-      </div>
-    </div>
-  </div>
-<div class="row menu">
-  <div class="col-sm-1"></div>
-  <div class="col-sm-1 menu-item">
-    <a href="#about us"><div class="item">About Us</div></a>
-  </div>
-<div class="col-sm-1 menu-item">
-    <a href="donate.php"><div class="item">Donate</div></a>
-  </div>
-  <div class="col-sm-1 menu-item">
-    <a href="schools.php"><div class="item">Schools</div></a>
-  </div>
-  <div class="col-sm-6">
-  </div>
-  <div class="col-sm-2 menu-item"> username</div>
-</div>
-  
-
-<div class="container-fluid" style="margin-top: 10px">
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-
-      <div class="item active">
-        <img src="images/b1.jpg" alt="Los Angeles" style="width:100%; height:580px;">
-        <div class="carousel-caption">
-          <h3 style ="color:black">Education is a utility which makes human a personality.</h3>
-          
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="images/b2.jpg" alt="Chicago" style="width:100%;height:580px">
-        <div class="carousel-caption">
-          <h3 style ="color:black">Education is smart enough to change the human mind positively!</h3>
-    
-        </div>
-      </div>
-    
-      <div class="item">
-        <img src="images/b3.jpg" alt="New York" style="width:100%;height:580px;">
-        <div class="carousel-caption">
-          <h3 style ="color:black">Be a reader, be a writer, be a problem solver.</h3>
-         
-        </div>
-      </div>
-  
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
+    <?php
+include 'header.php';
+include 'menu.php';
+include 'slider.php';
+?>
 <div class="container-fluid" style="margin-top:10px;">
 <div class="row">
   <div class="col-sm-1"></div>
