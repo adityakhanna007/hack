@@ -8,14 +8,6 @@
     <?php
      
 }
-    else if(isset($_GET['sinvalid']))
-{
-    ?>
-    alert("There are error(s) in your form:school id is invalid");
-    <?php
-     
-    
-}
 ?>
 </script>
 <html>
@@ -177,7 +169,7 @@ color:black;
   <div class="col-sm-3" style="text-align: center;">
     <h3>Login for Schools</h3>
     <br>
-    <form method="post" action="check2.php">
+    <form method="post" action="signupschool.php">
 <div class="form-group" >
     <input class="form-control" type="text" name="semail" placeholder="school-id" required>
     <br>

@@ -1,14 +1,8 @@
 <script>
 <?php
 
- if(isset($_GET['invalid']))
-{
-    ?>
-    alert("There are error(s) in your form:email is invalid");
-    <?php
-     
-}
-    else if(isset($_GET['sinvalid']))
+
+  if(isset($_GET['sinvalid']))
 {
     ?>
     alert("There are error(s) in your form:school id is invalid");
@@ -17,6 +11,21 @@
     
 }
 ?>
+</script>
+<script>
+function showdist(str)
+    { 
+        var s=str;
+         xml= new XMLHttpRequest;
+    xml.onreadystatechange=function(){
+        if(this.readyState==4&&this.status==200)
+            {
+                document.getElementById("list").innerHTML=this.responseText;
+            }
+    }
+       xml.open("GET","districtopt.php?q="+s,true);
+    xml.send();
+    }
 </script>
 <html>
 <head>
@@ -172,15 +181,14 @@ color:black;
   <div class="col-sm-3" style="text-align: center;">
     <h3>Sign Up</h3>
     <br>
-    <form method="post" action="check2.php">
+    <form method="post" action="signupschool.php">
 <div class="form-group" >
     <input class="form-control" type="text" name="sname" placeholder="school-name" required>
     <br>
     <input class="form-control" type="text" name="sid" placeholder="school-id" required>
     <br>
     <div style="text-align:left;font-size:20px;">State</div>
-    
-    <select class="form-control" id="list">
+    <select class="form-control"  onchange="showdist(this.value)" name="state">
         <?php
         include 'connection.php';
         $sql="select distinct State from state_dist";
@@ -194,36 +202,24 @@ color:black;
             
         
         ?>
-    </select >
-    <script>
-    var state=document.getElementById("list").value;
+    </select>
     
-    </script>
     <br>
     <div style="text-align:left;font-size:20px">District</div>
     
-    <select class="form-control">
-         <?php
-        $sql="select District from state_dist where";
-        $res=mysqli_query($con,$sql);
-        while($row=mysqli_fetch_assoc($res))
-        {
-            ?>
-        <option><?php echo $row['State']; ?></option>
-        <?php
-        }
-            
+    <div id="list">
+        <select class="form-control" name="district">
         
-        ?>
-    </select>
+        </select>
+    </div>
     
     
     <br>
      <input class="form-control" type="text" name="bankaccountno" placeholder="Bank Account Number" required>
     <br>
-    <input class="form-control" type="text" name="Phone number" placeholder="Phone Number" required>
+    <input class="form-control" type="text" name="phone" placeholder="Phone Number" required>
     <br>
-    <input class="form-control" type="password" name="pass" placeholder="Password" required>
+    <input class="form-control" type="password" name="spass" placeholder="Password" required>
     <br>
     <input class="form-control" type="password" name="cpass" placeholder="Confirm Password" required>
     <br>

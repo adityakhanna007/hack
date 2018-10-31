@@ -5,21 +5,7 @@ if(isset($_GET['added']))
     alert("Signup Successful");
     <?php
 }
- if(isset($_GET['invalid']))
-{
-    ?>
-    alert("There are error(s) in your form:email is invalid");
-    <?php
-     
-}
-    else if(isset($_GET['sinvalid']))
-{
-    ?>
-    alert("There are error(s) in your form:school id is invalid");
-    <?php
-     
-    
-}
+
 ?>
 </script>
 <html>
@@ -69,8 +55,17 @@ body
   background-color:#333;;
   color:white;
   padding:17px;
-  font-size: 125%
-}
+    font-size: 125%;}
+    .item
+    {
+        color:white;
+        
+    }
+    .item:hover
+    {
+        color: black;
+    }
+
 .menu-item:hover
 {
 background-color: white;
@@ -90,13 +85,13 @@ color:black;
 <div class="row menu">
   <div class="col-sm-1"></div>
   <div class="col-sm-1 menu-item">
-    About Us
+    <a href="#about us"><div class="item">About Us</div></a>
   </div>
 <div class="col-sm-1 menu-item">
-    <a href="donate.php">Donate</a>
+    <a href="donate.php"><div class="item">Donate</div></a>
   </div>
   <div class="col-sm-1 menu-item">
-    <a href="schools.php">Schools</a>
+    <a href="schools.php"><div class="item">Schools</div></a>
   </div>
   <div class="col-sm-6">
   </div>
@@ -196,4 +191,6 @@ color:black;
 </div>
 </div>
  <div id="error"> <? echo $error.$successMessage; ?></div>
+    <div class="about"><h1 style="font-size:30px;margin:30px;font-weight:bold" id="about us">ABOUT US</h1> </div>
 </body>
+    
