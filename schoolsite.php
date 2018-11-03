@@ -1,12 +1,56 @@
+<?php
+include 'connection.php';
+$name=str_replace('+',' ',$_GET['schoolname']);
+$name=str_replace('%2C',',',$name);
+$sql="select * from school where Name='$name' ";
+$res=mysqli_query($con,$sql);
+$row=mysqli_fetch_assoc($res);
+echo $row['Name']."\n";
+echo $row['School_ID'];
+echo $row['State'];
+echo $row['District'];
+echo $row['Acc_No']."\t";
+echo $row['Phone'];
+?>
 <html>
 <head>
-<title>Donate for schools</title>
+<title>Donate </title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
+.bg-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
 
-* {
-  box-sizing: border-box;
+  display: block;
+  background-image: url('images/don.jpg');
+  width: 100%;
+  height: 100%;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+
 }
+.bg-text {
+ 
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .heading
 {
 background-color: #D35400  ;
@@ -99,12 +143,14 @@ body {
 }
 </style>
 <body>
-  
-          <div class= "heading"><h1><div id="head">Select To Donate</div></h1></div>
+  <div class="bg-image"></div>
+  <div class="bg-text">
+  <div ><h1><div id="head">Select To Donate</div></h1></div>
 <div class="desc"><p>
 
 A donation is a gift for charity, humanitarian aid, or to benefit a cause. A donation may take various forms, including money, alms, services, or goods such as clothing, toys, food, or vehicles.
 You can select the category under which you want to contribute and proceed.</p></div>
+<br><br>
 <div class="row">    
 <div class="column">  
 <div class="flip-card">
@@ -112,9 +158,10 @@ You can select the category under which you want to contribute and proceed.</p><
     <div class="flip-card-front">
       <img src="images/donate1.jpg" alt="Avatar" style="width:300px;height:300px;">
     </div>
-    <div class="flip-card-back">
+    <div class="flip-card-back" style="background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);">
       <h1>Give your share to show you care!</h1> 
-      <a href="pay.php"  style="font-size: 30px;color: white">Donate</a>
+      <a href="<?php echo "pay2.php?id=".$row['School_ID']?>"  style="font-size: 30px;color: blue">Donate</a>
     </div>
   </div>
 </div>
@@ -125,37 +172,42 @@ You can select the category under which you want to contribute and proceed.</p><
     <div class="flip-card-front">
       <img src="images/donate2.jpg" alt="Avatar" style="width:300px;height:300px;">
     </div>
-    <div class="flip-card-back">
+    <div class="flip-card-back" style="background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);">
       <h1>Make it a rule never to give a child a book you would not read yourself.</h1> 
-      <a href="books.php" style="font-size: 30px;color: white">Donate</a>
+      <a href="<?php echo "books.php?id=".$row['School_ID']?>" style="font-size: 30px;color: blue">Donate</a>
     </div>
   </div>
 </div>
 </div>
 <div class="column">  
-<div class="flip-card">
+<div class="flip-card" >
   <div class="flip-card-inner">
     <div class="flip-card-front">
       <img src="images/donate3.jpg" alt="Avatar" style="width:300px;height:300px;">
     </div>
-    <div class="flip-card-back">
+    <div class="flip-card-back" class="flip-card" style="background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);">
       <h1>A healthy mind resides in a healthy body; play sports!</h1> 
-      <a href="sports.php" style="font-size: 30px;color: white">Donate</a>
+      <a href="<?php echo "sports.php?id=".$row['School_ID']?>"  style="font-size: 30px;color: blue">Donate</a>
     </div>
   </div>
 </div>
 </div>
 <div class="column">  
-<div class="flip-card">
+<div class="flip-card" >
   <div class="flip-card-inner">
     <div class="flip-card-front">
       <img src="images/donate4.jpg" alt="Avatar" style="width:300px;height:300px;">
     </div>
-    <div class="flip-card-back">
+    <div class="flip-card-back" class="flip-card" style="background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);">
       <h1>A healthy food for a wealthy mood.</h1> 
-      <a href="food.php" style="font-size: 30px;color: white">Donate</a>
+      <a href="<?php echo "meal.php?id=".$row['School_ID']?>" style="font-size: 30px;color: blue">Donate</a>
     </div>
   </div>
+</div>
+</div>
 </div>
 </div>
 </div>

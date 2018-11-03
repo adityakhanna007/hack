@@ -1,5 +1,12 @@
+<style>
+.slid
+{
+  margin:4px;
 
-<div class="container-fluid">
+}
+</style>
+
+<div class="container-fluid slid">
 
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -15,24 +22,24 @@
       <div class="item active">
         <img src="images/b1.jpg" alt="Los Angeles" style="width:100%; height:400px;">
         <div class="carousel-caption">
-          <h3>Los Angeles</h3>
-          <p>LA is always so much fun!</p>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
       <div class="item">
         <img src="images/b2.jpg" alt="Chicago" style="width:100%;height:400px">
         <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago!</p>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
     
       <div class="item">
         <img src="images/b3.jpg" alt="New York" style="width:100%;height:400px;">
         <div class="carousel-caption">
-          <h3>New York</h3>
-          <p>We love the Big Apple!</p>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
   

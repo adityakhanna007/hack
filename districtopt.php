@@ -5,7 +5,7 @@ $sql="select District from state_dist where State='$q' ";
 $res=mysqli_query($con,$sql);
 
 ?>
-<select class="form-control" name="district">
+<select class="form-control" name="district" id="distname">
     <?php
 while($row=mysqli_fetch_assoc($res))
 {

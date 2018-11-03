@@ -1,6 +1,13 @@
 <script>
 <?php
-
+if(isset($_GET['wrong']))
+{
+    ?>
+    alert("Your password doesn't match ");
+    <?php
+     
+    
+}
 
   if(isset($_GET['sinvalid']))
 {
@@ -28,9 +35,8 @@ function showdist(str)
 </script>
 <html>
 <head>
-  
 <title>
-  FIRST PAGE
+  NEW SCHOOL
 </title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -40,78 +46,49 @@ function showdist(str)
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
-body
-{
+.bg-image {
+  /* The image used */
+  background-image: url("images/hd3.jpg");
+
+  /* Add the blur effect */
+  filter: blur(10px);
+  -webkit-filter: blur(7px);
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bg-text {
  
-}
-.heading
-{
-  background-image: url("images/b7.jpg");
-  height: 100px;
+  color: white;
+  font-weight: bold;
   
-}
-.back
-{
-  margin-top:10px;
-  width:100% ;
-  height:400px;
-}
-.headtext
-{
-  font-family: 'Permanent Marker', cursive; 
-  padding-top: 25px;
-  position:relative;
-  left:50px;
-}
-.menu
-{
-  height:auto;
-  background-color:#333;;
-  color:white;
-  padding:17px;
-  font-size: 125%
-}
-.menu-item:hover
-{
-background-color: white;
-color:black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  width: 80%;
+  padding: 80px;
+  text-align: center;
 }
 </style>
 <body>
- 
-  <?php
-include 'header.php';
-include 'menu.php';
-include 'slider.php';
-?>
+  <div class="bg-image"></div>
+  <div class="bg-text">
 <div class="container-fluid" style="margin-top:10px;">
 <div class="row">
-  <div class="col-sm-1"></div>
-  <div class="col-sm-3"style="text-align: center; ">
-    <h3>Login For User</h3>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-5"style="text-align: center; ">
+    <h3 style="color:#A04000">Register Your School!!</h3>
         <br>
-    <form method="post" action="check.php">
-<div class="form-group" >
-    <input class="form-control" type="text" name="email" placeholder="abc@xyz.com" required>
-    <br>
-    <input class="form-control" type="password" name="pass" placeholder="password" required>
-    <br>
-    <button class="form-control btn btn-primary" type="submit">Login</button>
-
-  </div>
-  </form>
-      <h6 style="text-align:right ;font-size:20px"><a href="reg_new_user.php">New User?</a></h6>
-  </div>
-  
-  <div class="col-sm-4"style="text-align: center;">
-    <h3>Updates</h3>
-  </div>
-  
-  <div class="col-sm-3" style="text-align: center;">
-    <h3>Sign Up</h3>
-    <br>
     <form method="post" action="signupschool.php">
-<div class="form-group" >
+      <div class="form-group" >
     <input class="form-control" type="text" name="sname" placeholder="school-name" required>
     <br>
     <input class="form-control" type="text" name="sid" placeholder="school-id" required>
@@ -152,8 +129,10 @@ include 'slider.php';
     <br>
     <input class="form-control" type="password" name="cpass" placeholder="Confirm Password" required>
     <br>
-    <button class="form-control btn btn-success" type="submit">Login</button>
-     
+    <button class="form-control btn btn-primary" type="submit">Sign Up</button>
+    <br>
+    <br>
+     <button class="form-control btn btn-success" type="submit" onclick ="window.location.href = 'login.php';">Go To HomePage</button>
 
   </div>
   </form>
@@ -161,5 +140,5 @@ include 'slider.php';
   <div class ="col-sm- 1"></div>
 </div>
 </div>
- <div id="error"> <? echo $error.$successMessage; ?></div>
+</div>
 </body>

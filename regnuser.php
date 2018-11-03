@@ -1,6 +1,13 @@
 <script>
 <?php
 
+ if(isset($_GET['uwrong']))
+{
+    ?>
+    alert("Password doesn't match");
+    <?php
+     
+}
  if(isset($_GET['invalid']))
 {
     ?>
@@ -14,7 +21,7 @@
 <head>
   
 <title>
-  FIRST PAGE
+ NEW USER
 </title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.css">
    <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -24,54 +31,46 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
-body
-{
+.bg-image {
+  /* The image used */
+  background-image: url("images/hd3.jpg");
+
+  /* Add the blur effect */
+  filter: blur(10px);
+  -webkit-filter: blur(7px);
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bg-text {
  
-}
-.heading
-{
-  background-image: url("images/b7.jpg");
-  height: 100px;
+  color: white;
+  font-weight: bold;
   
-}
-.back
-{
-  margin-top:10px;
-  width:100% ;
-  height:400px;
-}
-.headtext
-{
-  font-family: 'Permanent Marker', cursive; 
-  padding-top: 25px;
-  position:relative;
-  left:50px;
-}
-.menu
-{
-  height:auto;
-  background-color:#333;;
-  color:white;
-  padding:17px;
-  font-size: 125%
-}
-.menu-item:hover
-{
-background-color: white;
-color:black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  width: 80%;
+  padding: 80px;
+  text-align: center;
 }
 </style>
-<body>
-  <?php
-include 'header.php';
-include 'menu.php';
-include 'slider.php';
-?>
+  <body>
+    <div class="bg-image"></div>
+  <div class="bg-text">
 <div class="container-fluid" style="margin-top:10px;">
 <div class="row">
-  <div class="col-sm-1"></div>
-  <div class="col-sm-3"style="text-align: center; ">
-    <h3>Sign Up</h3>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-5"style="text-align: center; ">
+    <h3>Register Yourself!!</h3>
         <br>
     <form method="post" action="signupuser.php">
 <div class="form-group" >
@@ -84,33 +83,19 @@ include 'slider.php';
     <br>
     <input class="form-control" type="password" name="confirmpass" placeholder="confirm password" required>
     <br>
-    <button class="form-control btn btn-primary" type="submit">Login</button>
-
+    <button class="form-control btn btn-primary" type="submit" ;">Sign Up</button>
+    <br>
+    <br>
+    <button class="form-control btn btn-success" type="submit" onclick ="window.location.href = 'login.php';">Go To HomePage</button>
   </div>
   </form>
       
   </div>
   
-  <div class="col-sm-4"style="text-align: center;">
-    <h3>Updates</h3>
-  </div>
   
-  <div class="col-sm-3" style="text-align: center;">
-    <h3>Login for Schools</h3>
-    <br>
-    <form method="post" action="signupschool.php">
-<div class="form-group" >
-    <input class="form-control" type="text" name="semail" placeholder="school-id" required>
-    <br>
-    <input class="form-control" type="password" name="spass" placeholder="password" required>
-    <br>
-    <button class="form-control btn btn-success" type="submit">Login</button>
-
-  </div>
-  </form>
-  </div>
   <div class ="col-sm- 1"></div>
 </div>
 </div>
- <div id="error"> <? echo $error.$successMessage; ?></div>
+</div>
 </body>
+</html>
